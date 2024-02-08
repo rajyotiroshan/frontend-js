@@ -1,0 +1,32 @@
+:root {
+  --body-bg-col: #010129;
+  --stck-name-bg-col: #010166;
+}
+
+body {
+  background-color: var(--body-bg-col);
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#sec-chart-list > ul {
+  list-style-type: none;
+}
+
+#sec-chart-list > ul li {
+  margin-bottom: 0.5rem;
+}
+
+#sec-chart-list > ul li span:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+#sec-chart-list > ul li span:first-child {
+  background-color: var(--stck-name-bg-col);
+}
