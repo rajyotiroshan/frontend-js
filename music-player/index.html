@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=Music, initial-scale=1.0" />
+    <title>R Music</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--App Header-->
+    <div class="app-header">
+      <div id="app-name">R Music</div>
+      <div>
+        <span>toggle</span>
+      </div>
+    </div>
+
+    <!--App Contaier-->
+
+    <div class="container">
+      <div class="songs">
+        <div class="song-filter">
+          <label for="song-filter">Filter by Genre</label>
+          <select name="filter" id="filter">
+            <option value="Hip Hop" selected>Hip Hop</option>
+            <option value="Rock" selected>Rock</option>
+            <option value="Jazz" selected>Jazz</option>
+          </select>
+        </div>
+
+        <div class="song-card">Song Card</div>
+
+        <div class="song-playlist">Playlist</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
