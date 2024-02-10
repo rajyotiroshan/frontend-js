@@ -4,6 +4,8 @@ async function fetchData(url, options, cb) {
     let data = await res.json();
     cb(data);
   } catch (error) {
+    console.log("Error in fetching data,", cb);
+    console.log(error);
     cb(error);
   }
 }

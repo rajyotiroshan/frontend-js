@@ -1,14 +1,28 @@
 import { urlForSummary } from "./urls.js";
 import fetchData from "./api.js";
-let stocksSummData = [];
-function handleSummData(res) {
-  if (!res.ok) {
-    console.log("Error in fetching Summary data", res);
-    return;
-  }
-  let { stocksProfileData } = res;
-  stocksSummData = stocksProfileData;
+import { updateSummaryData } from "../index.js";
+function renderChartSummary({ stockName, stockProfit, stockBV, stockSummary }) {
+  const chartdetails = document.getElementById("chart-details");
+
+  const summHTML = ` <div class="cd-hdr">
+  <h3>
+    <span id="st-name">${stockName}</span>
+    <span id="st-pf">${stockProfit}%</span>
+    <span id="st-bv">$${stockBV}</span>
+  </h3>
+  <p id="st-summ">
+  ${stockSummary}
+  </p>
+</div>`;
+  chartdetails.innerHTML = summHTML;
 }
+function handleSummData(res) {
+  console.log(res);
+  let { stocksProfileData } = res;
+  console.log(stocksProfileData);
+  updateSummaryData(stocksProfileData[0]);
+}
+
 function fetchDataForChartSummary() {
   fetchData(
     urlForSummary,
@@ -19,4 +33,4 @@ function fetchDataForChartSummary() {
   );
 }
 
-export { stocksSummData, fetchDataForChartSummary };
+export { fetchDataForChartSummary, renderChartSummary };
