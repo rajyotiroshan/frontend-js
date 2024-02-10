@@ -1,6 +1,7 @@
 :root {
   --body-bg-col: #010129;
   --stck-name-bg-col: #010166;
+  --chart-bg-color: #010845;
 }
 
 body {
@@ -29,4 +30,9 @@ main {
 
 #sec-chart-list > ul li span:first-child {
   background-color: var(--stck-name-bg-col);
+}
+
+/*** CHART ***/
+#chart-canvas {
+  background-color: var(--chart-bg-color);
 }

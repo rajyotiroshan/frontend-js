@@ -17,10 +17,12 @@ function renderChartSummary({ stockName, stockProfit, stockBV, stockSummary }) {
   chartdetails.innerHTML = summHTML;
 }
 function handleSummData(res) {
-  console.log(res);
+  //console.log(res);
   let { stocksProfileData } = res;
-  console.log(stocksProfileData);
-  updateSummaryData(stocksProfileData[0]);
+  //console.log(stocksProfileData);
+  if (stocksProfileData.length > 0) {
+    updateSummaryData(stocksProfileData[0]);
+  }
 }
 
 function fetchDataForChartSummary() {
