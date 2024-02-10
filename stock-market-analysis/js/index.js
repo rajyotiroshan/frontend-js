@@ -1,8 +1,5 @@
-import { fetchStocksStatsData, renderStocksList } from "./module/stcklist.js";
-import {
-  fetchDataForChartSummary,
-  renderChartSummary,
-} from "./module/chartSummary.js";
+import { fetchStocksStatsData } from "./module/stcklist.js";
+import { fetchDataForChartSummary } from "./module/chartSummary.js";
 
 import { fetchChartData, renderChart } from "./module/chart.js";
 //render list
@@ -19,18 +16,14 @@ let currRenderedChartData = {
 function updateStatsData(data) {
   stocksStatsData = data;
   // console.log(stocksStatsData);
-  renderStocksList(data);
   let firstStockName = Object.keys(data)[0];
+  //TODO:: seperate function
   currRenderedChartData.stockName = firstStockName;
   currRenderedChartData.stockProfit = data[firstStockName].profit;
   currRenderedChartData.stockBV = data[firstStockName].bookValue;
 }
-
 function updateSummaryData(data) {
   stocksSummaryData = data;
-  let { stockName } = currRenderedChartData;
-  currRenderedChartData.stockSummary = data[stockName].summary;
-  renderChartSummary(currRenderedChartData);
 }
 function updateChartData(data) {
   //console.log("updateChartData");
@@ -38,7 +31,11 @@ function updateChartData(data) {
   stocksChartData = data;
 
   //console.log(stocksChartData);
-  renderChart();
+}
+
+function updateCurrChartSumm() {
+  let { stockName } = currRenderedChartData;
+  currRenderedChartData.stockSummary = stocksSummaryData[stockName].summary;
 }
 
 //chartstatsData
@@ -54,4 +51,5 @@ export {
   updateSummaryData,
   updateStatsData,
   currRenderedChartData,
+  updateCurrChartSumm,
 };

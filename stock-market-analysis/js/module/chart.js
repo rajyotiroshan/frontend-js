@@ -7,6 +7,7 @@ import {
 } from "../index.js";
 import CHART_COLORS from "../utils/chartColors.js";
 import { timeStampTodate } from "../utils/util.js";
+let myChart = null;
 function getData(time = "5y") {
   let data = [2, 5, 2, 8, 5, 9];
   return data;
@@ -17,11 +18,11 @@ function getDataSetForChart() {
   const intervals = stocksChartData[label][interval].timeStamp;
   const intervalsDate = timeStampTodate(intervals);
   const data = stocksChartData[label][interval].value;
-  console.log("getDataSetForChart");
+  /*   console.log("getDataSetForChart");
   console.log(stocksChartData);
   console.log(label);
   console.log(intervalsDate);
-  console.log(data);
+  console.log(data); */
   const dataForChart = {
     labels: intervalsDate,
     datasets: [
@@ -42,14 +43,14 @@ function renderChart() {
 
   console.log("renderChart()");
   console.log(currRenderedChartData);
-  const ctx = document.getElementById("chart-canvas");
-
+  const ctx = document.getElementById("chart-canvas").getContext("2d");
+  ctx.innerHTML = "";
   const dataSet = getDataSetForChart();
   const config = {
     type: "line",
     data: dataSet,
     options: {
-      responsive: false,
+      responsive: true,
       plugins: {
         legend: {
           position: "top",
@@ -59,10 +60,20 @@ function renderChart() {
           text: "Chart.js Line Chart",
         },
       },
+      scales: {
+        x: {
+          display: false,
+        },
+        y: {
+          display: false,
+        },
+      },
     },
   };
-
-  new Chart(ctx, config);
+  if (myChart !== null) {
+    myChart.destroy();
+  }
+  myChart = new Chart(ctx, config);
 }
 
 function handleChartData(res) {
@@ -73,6 +84,8 @@ function handleChartData(res) {
   if (stocksData.length > 0) {
     updateChartData(stocksData[0]);
   }
+
+  renderChart();
 }
 function fetchChartData() {
   fetchData(urlForCharts, { methods: "GET" }, handleChartData);

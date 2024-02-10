@@ -1,9 +1,16 @@
 import { urlForSummary } from "./urls.js";
 import fetchData from "./api.js";
-import { updateSummaryData } from "../index.js";
-function renderChartSummary({ stockName, stockProfit, stockBV, stockSummary }) {
+import {
+  currRenderedChartData,
+  updateCurrChartSumm,
+  updateSummaryData,
+} from "../index.js";
+function renderChartSummary() {
+  updateCurrChartSumm();
+  let { stockName, stockProfit, stockBV, stockSummary } = currRenderedChartData;
   const chartdetails = document.getElementById("chart-details");
-
+  console.log("renderSummary");
+  console.log(currRenderedChartData);
   const summHTML = ` <div class="cd-hdr">
   <h3>
     <span id="st-name">${stockName}</span>
@@ -23,6 +30,7 @@ function handleSummData(res) {
   if (stocksProfileData.length > 0) {
     updateSummaryData(stocksProfileData[0]);
   }
+  renderChartSummary(currRenderedChartData);
 }
 
 function fetchDataForChartSummary() {

@@ -24,6 +24,11 @@ main {
   margin-bottom: 0.5rem;
 }
 
+#sec-chart-list > ul li > span:first-child:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgb(8, 229, 75);
+}
+
 #sec-chart-list > ul li span:not(:last-child) {
   margin-right: 0.5rem;
 }
