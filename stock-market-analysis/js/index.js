@@ -32,15 +32,16 @@ function updateChartData(data) {
 
   //console.log(stocksChartData);
 }
-
-function updateCurrChartSumm() {
-  let { stockName } = currRenderedChartData;
-  currRenderedChartData.stockSummary = stocksSummaryData[stockName].summary;
-}
-
 function updateChartCurrInterval(interval) {
   currRenderedChartData.interval = interval;
 }
+function updateCurrChartState() {
+  let { stockName } = currRenderedChartData;
+  currRenderedChartData.stockSummary = stocksSummaryData[stockName].summary;
+  currRenderedChartData.stockProfit = stocksStatsData[stockName].profit;
+  currRenderedChartData.stockBV = stocksStatsData[stockName].bookValue;
+}
+
 //chartstatsData
 fetchStocksStatsData();
 fetchDataForChartSummary();
@@ -54,6 +55,6 @@ export {
   updateSummaryData,
   updateStatsData,
   currRenderedChartData,
-  updateCurrChartSumm,
+  updateCurrChartState,
   updateChartCurrInterval,
 };

@@ -9,10 +9,7 @@ import {
 import CHART_COLORS from "../utils/chartColors.js";
 import { timeStampTodate } from "../utils/util.js";
 let myChart = null;
-function getData(time = "5y") {
-  let data = [2, 5, 2, 8, 5, 9];
-  return data;
-}
+
 function getDataSetForChart() {
   const label = currRenderedChartData.stockName;
   const interval = currRenderedChartData.interval;
@@ -44,7 +41,7 @@ function renderChart() {
 
   console.log("renderChart()");
   console.log(currRenderedChartData);
-  const ctx = document.getElementById("chart-canvas").getContext("2d");
+  const ctx = document.getElementById("chart-canvas");
 
   const dataSet = getDataSetForChart();
   const config = {
@@ -52,6 +49,7 @@ function renderChart() {
     data: dataSet,
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           position: "top",
@@ -113,4 +111,13 @@ oneyrbtn.addEventListener("click", () => {
 fiveyrbtn.addEventListener("click", () => {
   createChartForInterval("5y");
 });
+
+//resize chart
+/* window.addEventListener("resize", () => {
+  const $chartContainer = document.getElementById("chart");
+  const wCharCont = $chartContainer.offsetWidth;
+  const hChartCont = $chartContainer.offsetHeight;
+  myChart.resize(wCharCont , hChartCont);
+}); */
+
 export { fetchChartData, renderChart };

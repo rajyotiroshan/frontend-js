@@ -5,7 +5,7 @@ import {
   stocksStatsData,
   updateStatsData,
   currRenderedChartData,
-  updateCurrChartSumm,
+  updateCurrChartState,
 } from "../index.js";
 import { renderChart } from "./chart.js";
 import { renderChartSummary } from "./chartSummary.js";
@@ -20,7 +20,13 @@ function renderStocksList() {
     let name = key;
     let { profit, bookValue } = data[key];
     let nSpan = document.createElement("span");
+
     let pSpan = document.createElement("span");
+    if (profit <= 0) {
+      pSpan.classList.add("red");
+    } else {
+      pSpan.classList.add("green");
+    }
     let bvSpan = document.createElement("span");
     nSpan.textContent = name;
     pSpan.textContent = profit;
@@ -43,13 +49,13 @@ function renderStocksList() {
 }
 
 function handleStockListNameClickListener(name) {
-  console.log(`${name} is clicked.`);
+  //console.log(`${name} is clicked.`);
   //update current currRenderedChartData name
   currRenderedChartData.stockName = name;
+  updateCurrChartState();
   //render chart
   renderChart();
   //render summary
-  updateCurrChartSumm();
   renderChartSummary();
 }
 function handleChartData(res) {
