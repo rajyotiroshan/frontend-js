@@ -61,6 +61,7 @@ function handleStockListNameClickListener(name) {
 function handleChartData(res) {
   let { stocksStatsData } = res;
   if (stocksStatsData.length > 0) {
+    delete stocksStatsData[0]._id;
     updateStatsData(stocksStatsData[0]);
   }
   renderStocksList();

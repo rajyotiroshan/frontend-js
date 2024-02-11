@@ -81,6 +81,7 @@ function handleChartData(res) {
   let { stocksData } = res;
   //console.log(stocksData);
   if (stocksData.length > 0) {
+    delete stocksData[0]._id;
     updateChartData(stocksData[0]);
   }
 

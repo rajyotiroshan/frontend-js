@@ -1,7 +1,7 @@
 import { fetchStocksStatsData } from "./module/stcklist.js";
 import { fetchDataForChartSummary } from "./module/chartSummary.js";
 
-import { fetchChartData, renderChart } from "./module/chart.js";
+import { fetchChartData } from "./module/chart.js";
 //render list
 let stocksStatsData = [];
 let stocksSummaryData = [];

@@ -32,6 +32,7 @@ function handleSummData(res) {
   let { stocksProfileData } = res;
   //console.log(stocksProfileData);
   if (stocksProfileData.length > 0) {
+    delete stocksProfileData[0]._id;
     updateSummaryData(stocksProfileData[0]);
   }
   renderChartSummary(currRenderedChartData);
