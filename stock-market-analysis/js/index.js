@@ -38,6 +38,9 @@ function updateCurrChartSumm() {
   currRenderedChartData.stockSummary = stocksSummaryData[stockName].summary;
 }
 
+function updateChartCurrInterval(interval) {
+  currRenderedChartData.interval = interval;
+}
 //chartstatsData
 fetchStocksStatsData();
 fetchDataForChartSummary();
@@ -52,4 +55,5 @@ export {
   updateStatsData,
   currRenderedChartData,
   updateCurrChartSumm,
+  updateChartCurrInterval,
 };

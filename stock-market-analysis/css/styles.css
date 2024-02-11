@@ -15,7 +15,45 @@ main {
   display: flex;
   justify-content: center;
 }
+section.sec-chart {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
 
+/** CHART BUTTOS**/
+button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+}
+.stock-chart button {
+  background-color: rgb(2, 2, 116);
+  /* opacity: .7; */
+  font-size: 18px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+.stock-chart button:hover {
+  opacity: 1;
+  background-color: rgb(3, 3, 131);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  /* margin-right: 20px; */
+}
+#stock-chart {
+  /* background-color: rgb(34, 34, 34); */
+  background-color: rgb(1, 1, 69);
+  border-radius: 10px;
+  width: 60%;
+  margin-top: 10px;
+  padding-top: 20px;
+}
 #sec-chart-list > ul {
   list-style-type: none;
 }

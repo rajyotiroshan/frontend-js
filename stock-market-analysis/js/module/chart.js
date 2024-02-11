@@ -4,6 +4,7 @@ import {
   updateChartData,
   currRenderedChartData,
   stocksChartData,
+  updateChartCurrInterval,
 } from "../index.js";
 import CHART_COLORS from "../utils/chartColors.js";
 import { timeStampTodate } from "../utils/util.js";
@@ -44,7 +45,7 @@ function renderChart() {
   console.log("renderChart()");
   console.log(currRenderedChartData);
   const ctx = document.getElementById("chart-canvas").getContext("2d");
-  ctx.innerHTML = "";
+
   const dataSet = getDataSetForChart();
   const config = {
     type: "line",
@@ -91,4 +92,25 @@ function fetchChartData() {
   fetchData(urlForCharts, { methods: "GET" }, handleChartData);
 }
 
+const onedaybtn = document.getElementById("btn1d");
+const onemonbtn = document.getElementById("btn1mo");
+const oneyrbtn = document.getElementById("btn1y");
+const fiveyrbtn = document.getElementById("btn5y");
+function createChartForInterval(interval) {
+  console.log("draw chat for interval::", interval);
+  updateChartCurrInterval(interval);
+  renderChart();
+}
+onedaybtn.addEventListener("click", () => {
+  createChartForInterval("1mo");
+});
+onemonbtn.addEventListener("click", () => {
+  createChartForInterval("3mo");
+});
+oneyrbtn.addEventListener("click", () => {
+  createChartForInterval("1y");
+});
+fiveyrbtn.addEventListener("click", () => {
+  createChartForInterval("5y");
+});
 export { fetchChartData, renderChart };
