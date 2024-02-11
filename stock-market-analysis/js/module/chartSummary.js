@@ -2,19 +2,23 @@ import { urlForSummary } from "./urls.js";
 import fetchData from "./api.js";
 import {
   currRenderedChartData,
-  updateCurrChartSumm,
+  updateCurrChartState,
   updateSummaryData,
 } from "../index.js";
 function renderChartSummary() {
-  updateCurrChartSumm();
+  updateCurrChartState();
   let { stockName, stockProfit, stockBV, stockSummary } = currRenderedChartData;
   const chartdetails = document.getElementById("chart-details");
   console.log("renderSummary");
-  console.log(currRenderedChartData);
+  //console.log(currRenderedChartData);
+  let className = "green";
+  if (stockProfit <= 0) {
+    className = "red";
+  }
   const summHTML = ` <div class="cd-hdr">
   <h3>
     <span id="st-name">${stockName}</span>
-    <span id="st-pf">${stockProfit}%</span>
+    <span id="st-pf" class=${className}>${stockProfit}%</span>
     <span id="st-bv">$${stockBV}</span>
   </h3>
   <p id="st-summ">
