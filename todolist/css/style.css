@@ -1,0 +1,107 @@
+:root {
+  --hdr-bg-color: #c6ebb2;
+  --hdr-text-color: #262528;
+  --delete-btn-color: #fc0100;
+  --icon-logo-col: #8c03d5;
+}
+body,
+* {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+  PAGE MAIN HEADER
+**/
+.hdr {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--hdr-bg-color);
+  padding: 1rem 0;
+}
+
+.hdr-logo {
+  margin-left: 3rem;
+}
+#hdr-main {
+  font-size: 3rem;
+}
+
+#hdr-text {
+  font-size: 2rem;
+}
+
+span.icon {
+}
+span.icon > i {
+  font-size: 5rem;
+  color: var(--icon-logo-col);
+}
+span.icon i.fa-pencil {
+  transform: rotate(315deg);
+  margin-left: -1.5rem;
+}
+
+/**
+  MAIN
+**/
+
+/*** LEFT **/
+section.main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+ul.left-nav > li {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+ul.left-nav > li i {
+  font-size: 2rem;
+}
+
+ul.left-nav > li span {
+  font-size: 1.6rem;
+  margin-left: 0.4rem;
+}
+
+/**RIGHT**/
+#right {
+  padding: 1rem 2rem;
+  background-color: aquamarine;
+  margin-left: 15rem;
+}
+
+#task-form {
+}
+
+#tasks {
+  padding: 1rem 0.5rem;
+}
+
+.tasks-list {
+  list-style-type: none;
+}
+
+.tasks-list span {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 0.8rem 0.5rem;
+  font-size: 2rem;
+}
+.form-el {
+  display: flex;
+  justify-content: center;
+}
+
+span.icon.form-el-icon > i {
+  font-size: 2rem;
+}

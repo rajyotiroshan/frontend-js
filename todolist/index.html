@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2a72c5c19d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="hdr">
+      <div class="hdr-logo">
+        <span class="icon">
+          <i class="fa-solid fa-book"></i>
+          <i class="fa-solid fa-pencil"></i>
+        </span>
+      </div>
+
+      <div>
+        <h1 id="hdr-main">TODO LIST</h1>
+        <span id="hdr-text">Create your list</span>
+      </div>
+    </header>
+
+    <section class="main">
+      <section class="left">
+        <ul class="left-nav">
+          <li>
+            <span class="icon left-nav-icon"
+              ><i class="fa-solid fa-list-check"></i
+            ></span>
+            <span>Tasks</span>
+          </li>
+
+          <li>
+            <span class="icon left-nav-icon"
+              ><i class="fa-solid fa-layer-group"></i
+            ></span>
+            <span>Category</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="right">
+        <form action="" id="task-form">
+          <div class="form-el form-input">
+            <input type="text" placeholder="Enter your Task" />
+            <span class="icon form-el-icon">
+              <i class="fa-solid fa-plus"></i
+            ></span>
+          </div>
+        </form>
+
+        <div id="tasks">
+          <ul class="tasks-list">
+            <li>
+              <span class="icon task-icon">
+                <input type="checkbox" id="task-cb" name="tcb" />
+              </span>
+              <span class="task-item">Want to buy computer</span>
+              <span class="task-icon">
+                <i class="fa-solid fa-trash"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
