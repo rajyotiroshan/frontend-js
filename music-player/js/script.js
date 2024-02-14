@@ -1,21 +1,4 @@
+import { songs } from "./modules/songsData.js";
+import { populateGenreSelect } from "./modules/allsongs/allsongs.js";
 
-
-function toggleTheme() {
-  //dark or light
-}
-
-function showSongs() {
-  //
-}
-
-function renderCurrentSong() {}
-
-//handller for add to playlist
-function addToPlaylist() {}
-
-//click handler for createPlaylist
-function createPlaylist() {}
-
-//click handler for all playlist
-//display songs in thatplaylist
-function renderPlaylistSong() {}
+populateGenreSelect(songs);
