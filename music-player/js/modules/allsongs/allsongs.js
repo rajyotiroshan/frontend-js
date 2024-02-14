@@ -25,6 +25,12 @@ function populateGenreSelect(songs) {
     filterSelectEl.appendChild(optEl);
   }
   //filterSelectEl.firstElementChild.setAttribute("selected");
+  filterSelectEl.addEventListener("change", genreChangeListener);
 }
-
+function genreChangeListener(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  let selectedOption = evt.target;
+  console.log(selectedOption);
+}
 export { populateGenreSelect };
