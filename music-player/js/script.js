@@ -1,4 +1,4 @@
-import { songs } from "./modules/songsData.js";
+import { songs } from "./songsData.js";
 import {
   createSongsListUI,
   createGenreSelectUI,

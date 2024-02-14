@@ -68,8 +68,6 @@ SCROLLBAR DESIGN
   background-color: var(--primary-color);
   font-size: 1.8rem;
   padding: 1rem;
-  min-width: 30%;
-  max-height: 80vh;
   overflow-y: scroll;
   /**SCROLLBAR**/
   /* width */
@@ -117,4 +115,52 @@ option.genre {
 }
 /** PLAYER **/
 
+.main-sec.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-sec.player > div {
+  width: 80%;
+}
+#music-card {
+  background-color: #0a81bc;
+  padding: 1rem;
+  box-shadow: 0px 0px 6px 0px blue;
+  border-radius: 1rem;
+}
+#music-img {
+  max-width: 100%;
+}
+#music-card > h3 {
+  font-size: 2.5rem;
+}
+#music-card > p {
+  font-size: 2rem;
+}
+.music-player {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  /* width: 90%; */
+  /* display: block; */
+}
+#controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+#controls > button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--tertiary-color);
+}
+
+#addtoplaylist {
+  margin-top: 1rem;
+  font-size: 2rem;
+  background-color: var(--tertiary-color);
+  padding: 0.3rem 0.5rem;
+}
 /** PLAYLIST**/

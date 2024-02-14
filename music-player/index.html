@@ -45,9 +45,34 @@
         </div>
       </div>
 
-      <div class="main-sec player">Song Card</div>
+      <div class="main-sec player">
+        <div id="music-card">
+          <img
+            src="./assets/audio-img/sajni-arijit.jpg"
+            id="music-img"
+            alt="song image"
+          />
+          <h3>Sajni</h3>
+          <p>Arijit singh</p>
+        </div>
 
-      <div class="main-sec playlist">Playlist</div>
+        <div class="music-player">
+          <audio controls id="mp3" autoplay="false">
+            <source src="./assets/audio/sajni-arijit.mp3" type="audio/mpeg" />
+
+            <p>mp3 not supported by your browser</p>
+          </audio>
+        </div>
+
+        <div id="controls">
+          <button>prev</button>
+          <button>next</button>
+        </div>
+
+        <button id="addtoplaylist">Add To Playlist</button>
+      </div>
+
+      <div class="main-sec playlist"></div>
     </div>
 
     <script type="module" src="./js/script.js"></script>
