@@ -105,22 +105,11 @@ let songs = [
   },
 ];
 
-function toggleTheme() {
-  //dark or light
-}
+let playlist = [
+  {
+    coding: [2, 3, 4],
+    travel: [1, 5, 6],
+  },
+];
 
-function showSongs() {
-  //
-}
-
-function renderCurrentSong() {}
-
-//handller for add to playlist
-function addToPlaylist() {}
-
-//click handler for createPlaylist
-function createPlaylist() {}
-
-//click handler for all playlist
-//display songs in thatplaylist
-function renderPlaylistSong() {}
+export { songs, playlist };

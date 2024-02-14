@@ -4,36 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=Music, initial-scale=1.0" />
     <title>R Music</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <!--App Header-->
-    <div class="app-header">
-      <div id="app-name">R Music</div>
-      <div>
-        <span>toggle</span>
+    <header class="app-header">
+      <div id="theme">
+        <input type="checkbox" id="theme-toggle" /><label
+          for="theme-toggle"
+          id="theme-name"
+          >Dark</label
+        >
       </div>
-    </div>
+      <h1 id="app-name">R Music</h1>
+    </header>
 
     <!--App Contaier-->
 
-    <div class="container">
-      <div class="songs">
+    <div class="main">
+      <div class="main-sec songs">
         <div class="song-filter">
-          <label for="song-filter">Filter by Genre</label>
+          <label for="filter">Filter by Genre</label>
           <select name="filter" id="filter">
-            <option value="Hip Hop" selected>Hip Hop</option>
-            <option value="Rock" selected>Rock</option>
-            <option value="Jazz" selected>Jazz</option>
+            <option value="Hip Hop" selected class="genre">Hip Hop</option>
+            <option value="Rock" class="genre">Rock</option>
+            <option value="Jazz" class="genre">Jazz</option>
           </select>
         </div>
 
-        <div class="song-card">Song Card</div>
-
-        <div class="song-playlist">Playlist</div>
+        <div class="songs-container">
+          <h2>All Songs</h2>
+          <ul class="songs-list">
+            <li class="song">Shapes of you- Ed Sheeran</li>
+            <li class="song">All of Me- Adele</li>
+            <li class="song">Something like you-Adele</li>
+            <li class="song">Wonderwall - Oasis</li>
+            <li class="song">Sugar- Moroon</li>
+            <li class="song">Kocked Away-R City</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="main-sec player">Song Card</div>
+
+      <div class="main-sec playlist">Playlist</div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
