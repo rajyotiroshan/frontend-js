@@ -21,7 +21,7 @@
 
     <!--App Contaier-->
 
-    <div class="main">
+    <main class="main">
       <div class="main-sec songs">
         <div class="song-filter">
           <label for="filter">Filter by Genre</label>
@@ -72,8 +72,37 @@
         <button id="addtoplaylist">Add To Playlist</button>
       </div>
 
-      <div class="main-sec playlist"></div>
-    </div>
+      <div class="main-sec playlist">
+        <!--Create Playlist input field-->
+        <form id="create-playlist">
+          <input
+            type="text"
+            id="crt-pl"
+            placeholder="Enter playlist name"
+            name="createPlaylist"
+          />
+          <button>Create Playlist</button>
+        </form>
+        <!--CURRENT PLAYLIST-->
+        <div id="curr-playlist" class="playlist-section">
+          <h2>Current Playlist</h2>
+          <ul class="curr-playlist-container">
+            <li class="s-playlist">Sajni</li>
+            <li class="s-playlist">Sajni</li>
+          </ul>
+        </div>
+
+        <!--CURRENT PLAYLIST-->
+        <div id="all-playlist" class="playlist-section">
+          <h2>All Playlist</h2>
+          <ul class="all-playlist-container">
+            <li class="pl-name">Coding</li>
+            <li class="pl-name">Sleep</li>
+            <li class="pl-name">Jogging</li>
+          </ul>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="./js/script.js"></script>
   </body>
