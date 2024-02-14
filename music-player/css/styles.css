@@ -11,6 +11,29 @@
   padding: 0;
   margin: 0;
 }
+/**
+SCROLLBAR DESIGN
+**/
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
 
 /**APP HEADER**/
 .app-header {
@@ -46,6 +69,10 @@
   font-size: 1.8rem;
   padding: 1rem;
   min-width: 30%;
+  max-height: 80vh;
+  overflow-y: scroll;
+  /**SCROLLBAR**/
+  /* width */
 }
 /** SONGS**/
 
@@ -68,15 +95,15 @@ option.genre {
 }
 
 /** SONGS CONTAINER**/
-.songs-container {
+#songs-container {
   margin-top: 3rem;
 }
 
-.songs-container > h2 {
+#songs-container > h2 {
   font-size: 3rem;
 }
 
-.songs-list {
+#songs-list {
   margin-top: 3rem;
   list-style-type: none;
 }
