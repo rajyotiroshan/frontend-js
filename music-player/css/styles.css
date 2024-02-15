@@ -14,7 +14,21 @@ body {
   padding: 0;
   margin: 0;
 }
-
+#app-name {
+  display: flex;
+  font-size: 3.5rem;
+  text-align: center;
+  /* align-content: center; */
+  justify-content: center;
+  align-items: center;
+}
+span#dot {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: blue;
+  border-radius: 50%;
+}
 ul {
   list-style-type: none;
 }
@@ -24,7 +38,10 @@ li {
   color: white;
   margin-bottom: 1rem;
 }
-
+li:hover {
+  cursor: pointer;
+  background-color: var(--tertiary-color);
+}
 h2 {
   font-size: 3rem;
 }
@@ -86,8 +103,9 @@ SCROLLBAR DESIGN
 .main {
   margin-top: 3rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height: 85vh;
+  margin-bottom: 5rem;
 }
 
 .main-sec {
@@ -196,7 +214,13 @@ audio#mp3 {
   height: 3rem;
 }
 /** PLAYLIST**/
-.s-playlist {
+h3#pl-hdr-name {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  background-color: var(--tertiary-color);
+}
+.pl-song {
   background-color: var(--secondary-color);
   color: white;
   margin-bottom: 1rem;

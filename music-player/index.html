@@ -16,7 +16,7 @@
           >Dark</label
         >
       </div>
-      <h1 id="app-name">R Music</h1>
+      <h1 id="app-name">R<span id="dot">.</span>Music</h1>
     </header>
 
     <!--App Contaier-->
@@ -85,12 +85,14 @@
           <button id="create-playlist-btn">Create Playlist</button>
         </form>
         <!--CURRENT PLAYLIST-->
-        <div id="curr-playlist" class="playlist-section">
+        <div id="curr-playlist-sec" class="playlist-section">
           <h2>Current Playlist</h2>
-          <ul class="curr-playlist-container">
-            <li class="s-playlist">Sajni</li>
-            <li class="s-playlist">Sajni</li>
-          </ul>
+          <div id="curr-playlist-container">
+            <ul id="curr-playlist">
+              <li class="pl-song">Sajni</li>
+              <li class="pl-song">Sajni</li>
+            </ul>
+          </div>
         </div>
 
         <!--ALL PLAYLIST-->
