@@ -5,6 +5,9 @@
 
   --dark-primary: #565657;
 }
+body {
+  background-color: cadetblue;
+}
 * {
   font-size: 10px;
   box-sizing: border-box;
@@ -163,11 +166,11 @@ option.genre {
   font-size: 2rem;
 }
 .music-player {
-  display: block;
+  display: flex;
   text-align: center;
   margin-top: 2rem;
-  /* width: 90%; */
-  /* display: block; */
+
+  justify-content: center;
 }
 #controls {
   margin-top: 1rem;
@@ -185,6 +188,12 @@ option.genre {
   font-size: 2rem;
   background-color: var(--tertiary-color);
   padding: 0.3rem 0.5rem;
+}
+
+audio#mp3 {
+  display: block;
+  width: 80%;
+  height: 3rem;
 }
 /** PLAYLIST**/
 .s-playlist {
