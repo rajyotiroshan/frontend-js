@@ -1,6 +1,6 @@
 //access songs list and populat genre.
 import { songs } from "../../songsData.js";
-
+import { updateCurrSong } from "../state/state.js";
 function createSongsListUI(songs) {
   const songsListUL = document.getElementById("songs-list");
   if (songsListUL !== null) songsListUL.remove();
@@ -9,14 +9,24 @@ function createSongsListUI(songs) {
   const songsList = document.createElement("ul");
   songsList.setAttribute("id", "songs-list");
   songsList.innerHTML = "";
-  songs.forEach(({ name, artist }) => {
+  songs.forEach(({ id, name, artist }) => {
     const liEl = document.createElement("li");
+    liEl.setAttribute("data-songid", id);
     liEl.classList.add("song");
     liEl.textContent = `${name} - ${artist}`;
+
+    //click evt to play current song
+    liEl.addEventListener("click", (evt) => {
+      evt.stopPropagation();
+      evt.preventDefault();
+
+      songClickListener(id);
+    });
     songsList.appendChild(liEl);
   });
   songsContainer.appendChild(songsList);
 }
+
 function getGenre(songs) {
   let genreSet = new Set();
 
@@ -63,5 +73,8 @@ function genreChangeListener(evt) {
   //console.log(songsListforGenre);
   createSongsListUI(songsListforGenre);
 }
-
+function songClickListener(id) {
+  //console.log(id, "::", typeof id);
+  updateCurrSong(id);
+}
 export { createGenreSelectUI, createSongsListUI };
