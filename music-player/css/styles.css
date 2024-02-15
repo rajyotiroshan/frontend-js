@@ -3,10 +3,11 @@
   --secondary-color: #0a81bc;
   --tertiary-color: #905bfd;
 
-  --dark-primary: #565657;
+  --dark-primary-color: #565657;
+  --dark-secondary-color: #263238;
 }
 body {
-  background-color: cadetblue;
+  background-color: var(--primary-color);
 }
 * {
   font-size: 10px;
@@ -86,6 +87,9 @@ SCROLLBAR DESIGN
   text-align: center;
 }
 
+/**
+  THEME
+**/
 #theme {
   text-align: right;
   padding-right: 2rem;
@@ -99,6 +103,7 @@ SCROLLBAR DESIGN
   background-color: var(--dark-primary);
   padding: 0.3rem;
 }
+
 /** MAIN **/
 .main {
   margin-top: 3rem;
@@ -169,7 +174,7 @@ option.genre {
   width: 80%;
 }
 #music-card {
-  background-color: #0a81bc;
+  background-color: var(--secondary-color);
   padding: 1rem;
   box-shadow: 0px 0px 6px 0px blue;
   border-radius: 1rem;
@@ -206,12 +211,18 @@ option.genre {
   font-size: 2rem;
   background-color: var(--tertiary-color);
   padding: 0.3rem 0.5rem;
+  align-self: center;
 }
 
 audio#mp3 {
   display: block;
   width: 80%;
   height: 3rem;
+}
+
+.player-contaier {
+  display: flex;
+  flex-direction: column;
 }
 /** PLAYLIST**/
 h3#pl-hdr-name {
@@ -229,4 +240,17 @@ h3#pl-hdr-name {
   background-color: var(--secondary-color);
   color: white;
   margin-bottom: 1rem;
+}
+
+/***CLASSES FOR THEMES***/
+.dark-primary {
+  background-color: var(--dark-primary-color);
+  color: white;
+}
+.dark-secondary {
+  background-color: var(--dark-secondary-color);
+}
+
+.dark-text-color {
+  color: white;
 }
