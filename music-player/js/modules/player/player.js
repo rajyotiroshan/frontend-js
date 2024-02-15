@@ -69,6 +69,10 @@ function nextBtnClickListener(songID) {
   updateCurrSong(nextSongID);
 }
 
-function addToPLBtnClickListener(songID) {}
+function addToPLBtnClickListener(songID) {
+  //steps:
+  //add to current playlist
+  //
+}
 
 export { updatePlayerUI };
