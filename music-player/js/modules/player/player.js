@@ -60,22 +60,15 @@ function updatePlayerUI(currSong) {
 }
 
 function prevBtnClickListener(songID) {
-  //console.log("prev");
-  //
-
   let prevSongID = getPrevSongID(songID);
   updateCurrSong(prevSongID);
 }
 
 function nextBtnClickListener(songID) {
-  //console.log("next");
-
   let nextSongID = getNextSongID(songID);
   updateCurrSong(nextSongID);
 }
 
-function addToPLBtnClickListener(songID) {
-  //console.log("addtopl");
-}
+function addToPLBtnClickListener(songID) {}
 
 export { updatePlayerUI };
