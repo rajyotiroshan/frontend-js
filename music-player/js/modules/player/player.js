@@ -1,4 +1,4 @@
-function updatePlayer(currSong) {
+function updatePlayerUI(currSong) {
   console.log(currSong);
   let { name, artist, img, source } = currSong;
   const mainSecPlayerEl = document.getElementById("main-sec-player");
@@ -23,13 +23,41 @@ function updatePlayer(currSong) {
                     </div>
 
                     <div id="controls">
-                        <button>prev</button>
-                        <button>next</button>
+                        <button id="prev-btn">prev</button>
+                        <button id="next-btn">next</button>
                     </div>
 
                     <button id="addtoplaylist">Add To Playlist</button>`;
   playerContainerEl.innerHTML = playerHTML;
   mainSecPlayerEl.appendChild(playerContainerEl);
+
+  //add click listener tp pre,next, addtoplaylist butto
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const addTopPLBtn = document.getElementById("addtoplaylist");
+  prevBtn.addEventListener("click", prevBtnClickListener);
+  nextBtn.addEventListener("click", nextBtnClickListener);
+  addTopPLBtn.addEventListener("click", addToPLBtnClickListener);
+}
+function prevBtnClickListener(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  //
+  console.log("prev");
 }
 
-export { updatePlayer };
+function nextBtnClickListener(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  //
+  console.log("next");
+}
+
+function addToPLBtnClickListener(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  //
+  console.log("addtopl");
+}
+
+export { updatePlayerUI };

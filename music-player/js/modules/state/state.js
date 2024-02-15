@@ -1,6 +1,6 @@
 import { songs } from "../../songsData.js";
-import { updatePlayer } from "../player/player.js";
-let currSong = {};
+import { updatePlayerUI } from "../player/player.js";
+let currSong = songs[0];
 function updateCurrSong(songID) {
   let songToPlay = songs.find(({ id }) => id === songID);
   if (!currSong) {
@@ -8,7 +8,7 @@ function updateCurrSong(songID) {
     return window.prompt("Song does not exist.");
   }
   currSong = songToPlay;
-  updatePlayer(currSong);
+  updatePlayerUI(currSong);
 }
 
 export { currSong, updateCurrSong };
