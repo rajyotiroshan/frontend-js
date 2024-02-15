@@ -1,5 +1,6 @@
 import { songs } from "../../songsData.js";
 import { updatePlayerUI } from "../player/player.js";
+import { renderAllPlaylist } from "../playlist/playlist.js";
 let currSong = songs[0];
 let allPlaylist = { jogging: [2, 1, 3], reading: [5, 2, 7] }; //{name: [songid1, songid2,..., songid3]}
 let currPlaylist = ""; //"<name of playlist>"
@@ -49,6 +50,7 @@ function getPrevSongID(currSongID) {
 function createNewPlaylist(playlistName) {
   if (!allPlaylist.hasOwnProperty(playlistName)) {
     allPlaylist[playlistName] = [];
+    renderAllPlaylist()
     return;
   }
   window.prompt(`Playlist with name "${playlistName}" already exist.`);
@@ -60,4 +62,5 @@ export {
   getPrevSongID,
   allPlaylist,
   currPlaylist,
+  createNewPlaylist
 };

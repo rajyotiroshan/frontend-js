@@ -1,4 +1,4 @@
-import { allPlaylist } from "../state/state.js";
+import { allPlaylist, createNewPlaylist } from "../state/state.js";
 
 function renderAllPlaylist() {
   const allPlayListcontainer = document.getElementById(
@@ -18,4 +18,17 @@ function renderAllPlaylist() {
   allPlayListcontainer.appendChild(allPlaylistUL);
 }
 
+const createPLBtn = document.getElementById("create-playlist-btn");
+createPLBtn.addEventListener("click", createPLBtnListener);
+function createPLBtnListener(evt) {
+  evt.preventDefault();
+  evt.stopPropagation();
+  //access input value
+  const crtPLInput = document.getElementById("crt-pl");
+  const playListName = crtPLInput.value.trim();
+  if (!playListName) {
+    return window.prompt("Enter a playlist name.");
+  }
+  createNewPlaylist(playListName);
+}
 export { renderAllPlaylist };
