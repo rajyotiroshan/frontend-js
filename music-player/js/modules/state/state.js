@@ -2,7 +2,7 @@ import { songs } from "../../songsData.js";
 import { updatePlayerUI } from "../player/player.js";
 import { renderAllPlaylist, renderCurrPlaylist } from "../playlist/playlist.js";
 let currSong = songs[0];
-let allPlaylist = { jogging: [2, 1, 3], reading: [5, 2, 7] }; //{name: [songid1, songid2,..., songid3]}
+let allPlaylist = {}; //{name: [songid1, songid2,..., songid3]}
 let currPlaylistName = ""; //"<name of playlist>"
 /**
  *
@@ -60,6 +60,26 @@ function updateCurrPlayListName(playListName) {
   currPlaylistName = playListName;
   renderCurrPlaylist();
 }
+
+function addCurrSongToCurrPL() {
+  if (Object.getOwnPropertyNames(allPlaylist).length <= 0) {
+    return window.alert("Please create a playlist");
+  }
+  if (!currPlaylistName) {
+    return window.alert("click on a available playlist");
+  }
+  if (!currSong) {
+    return window.alert("play a song to add to playlist");
+  }
+  //
+  if (allPlaylist[currPlaylistName].includes(currSong.id)) {
+    return window.alert(
+      `Song Already included in the playlist:: ${currPlaylistName}`
+    );
+  }
+  allPlaylist[currPlaylistName].push(currSong.id);
+  renderCurrPlaylist();
+}
 export {
   currSong,
   updateCurrSong,
@@ -69,4 +89,5 @@ export {
   currPlaylistName,
   createNewPlaylist,
   updateCurrPlayListName,
+  addCurrSongToCurrPL,
 };

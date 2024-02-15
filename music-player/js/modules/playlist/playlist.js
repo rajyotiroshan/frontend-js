@@ -1,5 +1,6 @@
 import { songs } from "../../songsData.js";
 import {
+  addCurrSongToCurrPL,
   allPlaylist,
   createNewPlaylist,
   currPlaylistName,
@@ -75,8 +76,10 @@ function createPLBtnListener(evt) {
   const crtPLInput = document.getElementById("crt-pl");
   const playListName = crtPLInput.value.trim();
   if (!playListName) {
-    return window.prompt("Enter a playlist name.");
+    return window.alert("Enter a playlist name in the input field");
   }
+  crtPLInput.value = "";
   createNewPlaylist(playListName);
 }
+
 export { renderAllPlaylist, renderCurrPlaylist };

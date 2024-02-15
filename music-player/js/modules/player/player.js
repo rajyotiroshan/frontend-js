@@ -1,11 +1,12 @@
 import {
+  addCurrSongToCurrPL,
   getNextSongID,
   getPrevSongID,
   updateCurrSong,
 } from "../state/state.js";
 
 function updatePlayerUI(currSong) {
-  console.log(currSong);
+  // console.log(currSong);
 
   let { name, artist, img, source, id: songID } = currSong;
   const mainSecPlayerEl = document.getElementById("main-sec-player");
@@ -70,9 +71,7 @@ function nextBtnClickListener(songID) {
 }
 
 function addToPLBtnClickListener(songID) {
-  //steps:
-  //add to current playlist
-  //
+  addCurrSongToCurrPL();
 }
 
 export { updatePlayerUI };
