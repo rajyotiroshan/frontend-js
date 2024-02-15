@@ -1,4 +1,8 @@
-import { getNextSongID, updateCurrSong } from "../state/state.js";
+import {
+  getNextSongID,
+  getPrevSongID,
+  updateCurrSong,
+} from "../state/state.js";
 
 function updatePlayerUI(currSong) {
   console.log(currSong);
@@ -58,21 +62,20 @@ function updatePlayerUI(currSong) {
 function prevBtnClickListener(songID) {
   //console.log("prev");
   //
-  console.log(songID);
-  let prevSongID = songID - 1;
+
+  let prevSongID = getPrevSongID(songID);
   updateCurrSong(prevSongID);
 }
 
 function nextBtnClickListener(songID) {
   //console.log("next");
-  console.log(songID);
+
   let nextSongID = getNextSongID(songID);
   updateCurrSong(nextSongID);
 }
 
 function addToPLBtnClickListener(songID) {
   //console.log("addtopl");
-  console.log(songID);
 }
 
 export { updatePlayerUI };

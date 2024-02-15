@@ -19,4 +19,13 @@ function getNextSongID(currSongID) {
   }
   return songs[nextSongIndex].id;
 }
-export { currSong, updateCurrSong,getNextSongID };
+
+function getPrevSongID(currSongID) {
+  let currSongIndex = songs.findIndex(({ id }) => id === currSongID);
+  let prevSongIndex = currSongIndex - 1;
+  if (prevSongIndex < 0) {
+    return songs[songs.length - 1].id;
+  }
+  return songs[prevSongIndex].id;
+}
+export { currSong, updateCurrSong, getNextSongID, getPrevSongID };
