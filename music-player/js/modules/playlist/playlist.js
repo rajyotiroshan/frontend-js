@@ -4,13 +4,13 @@ import {
   createNewPlaylist,
   currPlaylistName,
   updateCurrPlayListName,
+  updateCurrSong,
 } from "../state/state.js";
-function getSongsNameForPlaylist(playlistName) {
+function getSongsListForPlaylist(playlistName) {
   let songsIDArr = allPlaylist[playlistName];
-  let songsNameArr = songs
-    .filter(({ id }) => songsIDArr.includes(id))
-    .map(({ name }) => name);
-  return songsNameArr;
+  let songsArr = songs.filter(({ id }) => songsIDArr.includes(id));
+
+  return songsArr;
 }
 function renderCurrPlaylist() {
   const currPlayListcontainer = document.getElementById(
@@ -22,13 +22,20 @@ function renderCurrPlaylist() {
   playlistHdr.setAttribute("id", "pl-hdr-name");
   const currPlSongsUL = document.createElement("ul");
   currPlSongsUL.setAttribute("id", "curr-playlist");
-  const songsNameArr = getSongsNameForPlaylist(currPlaylistName);
-  for (let name of songsNameArr) {
+  const songsArr = getSongsListForPlaylist(currPlaylistName);
+  for (let { name, artist, id } of songsArr) {
     const liEl = document.createElement("li");
     liEl.classList.add(["pl-name"]);
-    liEl.textContent = name;
+    liEl.textContent = `${name} - ${artist}`;
     liEl.setAttribute("data-pl-song-name", name);
     currPlSongsUL.appendChild(liEl);
+
+    //add listener tosong to play
+    liEl.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      evt.stopPropagation();
+      updateCurrSong(id);
+    });
   }
   currPlayListcontainer.appendChild(playlistHdr);
   currPlayListcontainer.appendChild(currPlSongsUL);
