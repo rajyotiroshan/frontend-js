@@ -1,6 +1,9 @@
+import { getNextSongID, updateCurrSong } from "../state/state.js";
+
 function updatePlayerUI(currSong) {
   console.log(currSong);
-  let { name, artist, img, source } = currSong;
+
+  let { name, artist, img, source, id: songID } = currSong;
   const mainSecPlayerEl = document.getElementById("main-sec-player");
   mainSecPlayerEl.innerHTML = "";
   const playerContainerEl = document.createElement("div");
@@ -35,29 +38,41 @@ function updatePlayerUI(currSong) {
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
   const addTopPLBtn = document.getElementById("addtoplaylist");
-  prevBtn.addEventListener("click", prevBtnClickListener);
-  nextBtn.addEventListener("click", nextBtnClickListener);
-  addTopPLBtn.addEventListener("click", addToPLBtnClickListener);
-}
-function prevBtnClickListener(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  //
-  console.log("prev");
+  prevBtn.addEventListener("click", (evt) => {
+    evt.stopPropagation();
+    evt.preventDefault();
+    prevBtnClickListener(songID);
+  });
+  nextBtn.addEventListener("click", (evt) => {
+    evt.stopPropagation();
+    evt.preventDefault();
+    nextBtnClickListener(songID);
+  });
+  addTopPLBtn.addEventListener("click", (evt) => {
+    evt.stopPropagation();
+    evt.preventDefault();
+    addToPLBtnClickListener(songID);
+  });
 }
 
-function nextBtnClickListener(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
+function prevBtnClickListener(songID) {
+  //console.log("prev");
   //
-  console.log("next");
+  console.log(songID);
+  let prevSongID = songID - 1;
+  updateCurrSong(prevSongID);
 }
 
-function addToPLBtnClickListener(evt) {
-  evt.stopPropagation();
-  evt.preventDefault();
-  //
-  console.log("addtopl");
+function nextBtnClickListener(songID) {
+  //console.log("next");
+  console.log(songID);
+  let nextSongID = getNextSongID(songID);
+  updateCurrSong(nextSongID);
+}
+
+function addToPLBtnClickListener(songID) {
+  //console.log("addtopl");
+  console.log(songID);
 }
 
 export { updatePlayerUI };
