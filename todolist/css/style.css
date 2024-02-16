@@ -105,3 +105,12 @@ ul.left-nav > li span {
 span.icon.form-el-icon > i {
   font-size: 2rem;
 }
+.fa-solid,
+.fas {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+input#task-name {
+  font-size: 2rem;
+}
