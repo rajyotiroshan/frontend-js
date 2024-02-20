@@ -86,16 +86,21 @@ ul.left-nav > li span {
   padding: 1rem 0.5rem;
 }
 
-.tasks-list {
-  list-style-type: none;
+#tasks-list > li {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
+#tasks-list > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .tasks-list span {
-  display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: center;
   padding: 0.8rem 0.5rem;
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 .form-el {
   display: flex;
@@ -105,12 +110,11 @@ ul.left-nav > li span {
 span.icon.form-el-icon > i {
   font-size: 2rem;
 }
-.fa-solid,
-.fas {
-  font-size: 3rem;
-  font-weight: 900;
-}
 
 input#task-name {
   font-size: 2rem;
+}
+
+.task-icon > i {
+  font-size: 1.5rem;
 }
