@@ -26,49 +26,44 @@
     </header>
 
     <section class="main">
-      <section class="left">
-        <ul class="left-nav">
-          <li>
-            <span class="icon left-nav-icon"
-              ><i class="fa-solid fa-list-check"></i
-            ></span>
-            <span>Tasks</span>
-          </li>
+      
+      <form action="" id="task-form">
+        <div class="form-el form-input">
+          <input type="text" id="task-name" placeholder="Enter your Task" />
+          <button class="icon form-el-icon" id="addtaskbtn">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </form>
 
+      <div id="tasks">
+        <div id="tasks-hdr">
+          <button id="comp-all-task">Complete all tasks</button>
+          <button id="clear-comp">Clear completed</button>
+        </div>
+        <ul class="tasks-list" id="tasks-list">
           <li>
-            <span class="icon left-nav-icon"
-              ><i class="fa-solid fa-layer-group"></i
-            ></span>
-            <span>Category</span>
+            <span class="icon task-icon">
+              <input type="checkbox" id="task-cb" name="tcb" />
+            </span>
+            <span class="task-item">Want to buy computer</span>
+            <span class="task-icon">
+              <i class="fa-solid fa-trash"></i>
+            </span>
           </li>
         </ul>
-      </section>
+        <div class="task-footer">
+          <span id="tasks-left">3 tasks left</span>
 
-      <section id="right">
-        <form action="" id="task-form">
-          <div class="form-el form-input">
-            <input type="text" id="task-name" placeholder="Enter your Task" />
-            <button class="icon form-el-icon" id="addtaskbtn">
-              <i class="fa-solid fa-plus"></i>
-            </button>
+          <div id="tasks-btn">
+            <button class="all">All</button>
+            <button class="uncompleted">Uncompleted</button>
+            <button class="completed">Completed</button>
           </div>
-        </form>
-
-        <div id="tasks">
-          <ul class="tasks-list" id="tasks-list">
-            <li>
-              <span class="icon task-icon">
-                <input type="checkbox" id="task-cb" name="tcb" />
-              </span>
-              <span class="task-item">Want to buy computer</span>
-              <span class="task-icon">
-                <i class="fa-solid fa-trash"></i>
-              </span>
-            </li>
-          </ul>
         </div>
-      </section>
+      </div>
     </section>
+
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

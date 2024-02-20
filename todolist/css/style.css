@@ -11,6 +11,21 @@ body,
   margin: 0;
 }
 
+span {
+  font-size: 2rem;
+}
+
+button {
+  font-size: 2rem;
+  border: none;
+  background-color: inherit;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
 /**
   PAGE MAIN HEADER
 **/
@@ -50,11 +65,12 @@ span.icon i.fa-pencil {
 
 /*** LEFT **/
 section.main {
+  width: 50%;
+  margin: 10rem auto 0rem;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 10rem;
+  align-items: center;
 }
 
 ul.left-nav > li {
@@ -83,13 +99,11 @@ ul.left-nav > li span {
 }
 
 #tasks {
-  padding: 1rem 0.5rem;
-}
-
-#tasks-list > li {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+  width: 100%;
+  padding: 2rem;
+  background-color: lightgray;
+  margin-top: 1rem;
+  border-radius: 1.5rem;
 }
 
 #tasks-list > li {
@@ -97,6 +111,12 @@ ul.left-nav > li span {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  padding: 1rem;
+}
+
+#tasks-list > li {
+  margin-bottom: 1rem;
 }
 .tasks-list span {
   padding: 0.8rem 0.5rem;
@@ -107,8 +127,8 @@ ul.left-nav > li span {
   justify-content: center;
 }
 
-span.icon.form-el-icon > i {
-  font-size: 2rem;
+#addtaskbtn > i {
+  font-size: 3rem;
 }
 
 input#task-name {
@@ -117,4 +137,23 @@ input#task-name {
 
 .task-icon > i {
   font-size: 1.5rem;
+}
+
+/**
+  * tasks header
+  **/
+div#tasks-hdr {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem;
+}
+
+/**
+  * tasks footer
+  **/
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem;
 }
