@@ -12,9 +12,19 @@ let state = {
 
 function addTaskToTaskList(task) {
   state.tasks.push(task);
-  console.log(state);
+  //update total uncomplted tasks.
+  state.totalUnTasks += 1;
+  state.totalTask += 1;
+  //console.log(state);
   //TODO:: update tasklist ui
   renderAllTasks(state.tasks);
+  updateUnCompletedTaskCount();
+}
+
+function updateUnCompletedTaskCount() {
+  document.getElementById("tasks-left").textContent = `${state.totalUnTasks} ${
+    state.totalUnTasks >= 1 ? "Tasks" : "Task"
+  } Left.`;
 }
 
 export { addTaskToTaskList };
