@@ -1,4 +1,5 @@
 import { addTaskToTaskList } from "../state.js";
+import { addNewTaskUI } from "./tasksList.js";
 
 function addTaskBtnHandler(evt) {
   evt.preventDefault();
@@ -12,6 +13,7 @@ function addTaskBtnHandler(evt) {
   //set input to ""
   taskInput.value = "";
   //add task to taskList
+  addNewTaskUI(taskName);
   addTaskToTaskList(taskName);
 }
 

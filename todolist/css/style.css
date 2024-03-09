@@ -122,6 +122,11 @@ ul.left-nav > li span {
   padding: 0.8rem 0.5rem;
   font-size: 3.5rem;
 }
+label.task-item {
+  padding: 0.8rem 0.5rem;
+  font-size: 3.5rem;
+}
+
 .form-el {
   display: flex;
   justify-content: center;
@@ -156,4 +161,11 @@ div#tasks-hdr {
   justify-content: space-between;
 
   padding: 1rem;
+}
+
+
+/* utiility classes**/
+li.task-completed{
+  background-color: green !important;
+  color: white;
 }

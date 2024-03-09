@@ -1,5 +1,3 @@
-import { renderAllTasks } from "./module/tasksList.js";
-
 let state = {
   tasks: [], //total tasks.
   unComletedTasks: [], //list of uncompleted tasks
@@ -17,7 +15,7 @@ function addTaskToTaskList(task) {
   state.totalTask += 1;
   //console.log(state);
   //TODO:: update tasklist ui
-  renderAllTasks(state.tasks);
+  //renderAllTasks(state.tasks);
   updateUnCompletedTaskCount();
 }
 
