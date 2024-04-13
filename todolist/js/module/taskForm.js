@@ -2,6 +2,7 @@ import { addTaskToTaskList } from "../state.js";
 import { addNewTaskUI } from "./tasksList.js";
 
 function addTaskBtnHandler(evt) {
+  debugger;
   evt.preventDefault();
   evt.stopPropagation();
   //
