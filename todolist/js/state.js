@@ -6,7 +6,7 @@ let state = {
 };
 
 function addTaskToTaskList(task) {
-  debugger;
+  
   state.tasks.push(task);
   //update total uncomplted tasks.
   state.totalUnTasks += 1;
@@ -18,7 +18,7 @@ function addTaskToTaskList(task) {
 }
 
 function updateUnCompletedTaskCount() {
-  debugger;
+
   document.getElementById("tasks-left").textContent = `${state.totalUnTasks} ${
     state.totalUnTasks >= 1 ? "Tasks" : "Task"
   } Left.`;
