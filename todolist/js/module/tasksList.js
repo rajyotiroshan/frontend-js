@@ -6,7 +6,7 @@ import {
   incUncompTasksCount,
 } from "../state.js";
 function addNewTaskUI(taskName) {
-  debugger;
+ 
   const tasksUL = document.getElementById("tasks-list");
   const taskLi = document.createElement("li");
   taskLi.innerHTML = `
@@ -20,17 +20,17 @@ function addNewTaskUI(taskName) {
             </span>`;
   tasksUL.append(taskLi);
   document.getElementById(taskName).addEventListener("change", (evt) => {
-    debugger;
+    
     evt.preventDefault();
     let liEl = evt.target.parentElement.parentElement;
     if (liEl.classList.contains("task-completed")) {
-      debugger;
+      er;
       liEl.classList.remove("task-completed"); //make uncompleted
       //TODO:increase count of tasks left
       incUncompTasksCount();
       decCompTasksCount();
     } else {
-      debugger;
+      er;
       liEl.classList.add("task-completed");
       //TODO: decrease count of task left
       incCompTasksCount();
@@ -40,18 +40,18 @@ function addNewTaskUI(taskName) {
   let s = document.getElementById(taskName + "d");
 
   s.addEventListener("click", (evt) => {
-    debugger;
+    er;
     evt.preventDefault();
     evt.stopPropagation();
-    // console.log("jhi");
+    
     let liEl = evt.target.parentElement;
     if (liEl.classList.contains("task-completed")) {
-      debugger;
+      er;
       liEl.classList.remove("task-completed"); //make uncompleted
-      //TODO:increase count of tasks left
+      //increase count of tasks left
       decCompTasksCount();
     } else {
-      debugger;
+      er;
       decUncompTasksCount();
     }
     liEl.remove();
