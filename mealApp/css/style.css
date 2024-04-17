@@ -1,0 +1,33 @@
+* {
+    box-sizing: content-box;
+    font-size: 10px;
+}
+ul, i, div, p, h1,h2,h3,h4,h5,h6{
+    font-size: inherit;
+    
+    }
+    
+    
+    main {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    ul#meals-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    li.meal {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .meal-img {
+        width: 200px;
+    }
+    
+    img {
+        width: 100%;
+    }
