@@ -2,6 +2,10 @@
     box-sizing: content-box;
     font-size: 10px;
 }
+
+ul {
+list-style-type: none;
+}
 header, nav,ul, li,i, div, p,section,a,span{
     font-size: inherit;
     
@@ -29,23 +33,64 @@ header, nav,ul, li,i, div, p,section,a,span{
     
     main {
         font-size: 1.6rem;
-        max-width: 80%;
+        max-width: 60%;
         margin: 0 auto;
     }
 
-    
+    section#search-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.4rem;
+    }
+
+    input#srch-field {
+        width: 70%;
+    }
+
     ul#meals-list {
-        list-style-type: none;
+       
         padding: 0;
         margin: 0;
     }
-    
+    #matched-meals-list {
+        margin-top: 0;
+        padding: 0;
+    }
+    #matched-meals-list > li {
+        font-size: 1.6 rem;
+
+    }
+
+    #matched-meals-list > li:hover {
+        color: #2d08c1a5;
+        cursor: pointer;
+    }
     li.meal {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         box-shadow: 0 0 5px 0px #FFC107;
         margin-bottom: 1rem;
         border: none;
+        padding: 2rem 1rem;
+    }
+
+    .meal-cont {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .meal-list-detail {
+        margin-left: 3rem;
+    }
+
+    .meal-list-detail.md-btn-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .meal-img {
@@ -65,3 +110,31 @@ header, nav,ul, li,i, div, p,section,a,span{
     p#footer-cr {
         text-align: right;
     }
+
+
+
+    .ytlink:link, .ytlink:visited {
+ 
+       color: #FF5722;
+
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+      }
+      
+      .ytlink:hover, .ytlink:active {
+        color:#2d08c1;
+      }
+
+      .meal-list-detail-btn {
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: green;
+        /* top: 42%; */
+        position: relative;
+      }
+
+      .meal-list-detail-btn:hover {
+        color: rgb(23, 2, 246);
+      }
