@@ -1,4 +1,5 @@
 import fetchData from "../../api/api.js";
+import { updateMealsList } from "../../state/stateFunctions.js";
 
 //meals to fetch on main page first time
 const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=veg`;
@@ -20,43 +21,53 @@ const data = {
  * Display meals list to UI
  * @param {fetched Meals Data list} resData
  */
-function renderMealsList(resData, isError) {
-  //console.log(mealsData);
+function renderMealsList(mealsArr) {
+  console.log(mealsArr);
+  const mealsUL = document.getElementById("meals-list");
+  mealsUL.innerHTML = "";
+  let mealsLIStr = "";
+  mealsArr.forEach((meal) => {
+    mealsLIStr =
+      mealsLIStr +
+      `          
+          <li class="meal">
+                  <div class="meal-img">
+                      <img src=${meal["strMealThumb"]} alt="meal img" />
+                  </div>
+                  <div class="meal-list-detail">
+                      <h2>${meal["strMeal"]}</h2>
+                      <p>${meal["strInstructions"]}</p>
+                      <h3>Ingredient</h3>
+                      <ul class="meal-list-ing">
+                          <li>${meal["strIngredient1"]}</li>
+                          <li>${meal["strIngredient2"]}</li>
+                          <li>${meal["strIngredient3"]}</li>
+                          <li>${meal["strIngredient4"]}</li>
+                          <li>${meal["strIngredient5"]}</li>
+                      </ul>
+                  </div>
+                  <div class="meal-list-detail">
+                  <a href="./pages/meal-details.html" class="meal-list-detail-btn"
+                      >Details</a
+                  >
+                  </div>
+      </li>`;
+  });
+
+  mealsUL.innerHTML = mealsLIStr;
+}
+
+/**
+ *
+ * @param {fetched Meals Data} resData
+ * @param {if an error during fetching or not} isError
+ */
+function cbForMealsFetched(resData, isError) {
   if (!isError) {
-    const mealsUL = document.getElementById("meals-list");
     let mealsData = [];
     mealsData = resData?.meals;
-    mealsUL.innerHTML = "";
-    let mealsLIStr = "";
-    mealsData.forEach((meal) => {
-      mealsLIStr =
-        mealsLIStr +
-        `          
-            <li class="meal">
-                    <div class="meal-img">
-                        <img src=${meal["strMealThumb"]} alt="meal img" />
-                    </div>
-                    <div class="meal-list-detail">
-                        <h2>${meal["strMeal"]}</h2>
-                        <p>${meal["strInstructions"]}</p>
-                        <h3>Ingredient</h3>
-                        <ul class="meal-list-ing">
-                            <li>${meal["strIngredient1"]}</li>
-                            <li>${meal["strIngredient2"]}</li>
-                            <li>${meal["strIngredient3"]}</li>
-                            <li>${meal["strIngredient4"]}</li>
-                            <li>${meal["strIngredient5"]}</li>
-                        </ul>
-                    </div>
-                    <div class="meal-list-detail">
-                    <a href="./pages/meal-details.html" class="meal-list-detail-btn"
-                        >Details</a
-                    >
-                    </div>
-        </li>`;
-    });
-
-    mealsUL.innerHTML = mealsLIStr;
+    //update meals state
+    updateMealsList(mealsData);
   } else {
     console.log(`Error in fetching meals data:: ${resData}`);
   }
@@ -65,10 +76,10 @@ function renderMealsList(resData, isError) {
 //fetch Meals data
 function fetchMealsData() {
   try {
-    fetchData(URL, data, renderMealsList);
+    fetchData(URL, data, cbForMealsFetched);
   } catch (err) {
     console.log(err);
   }
 }
 
-export { fetchMealsData };
+export { fetchMealsData, renderMealsList };
