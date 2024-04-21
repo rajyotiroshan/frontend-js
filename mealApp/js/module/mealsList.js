@@ -1,4 +1,6 @@
 import fetchData from "../../api/api.js";
+
+//meals to fetch on main page first time
 const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=veg`;
 const data = {
   method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -14,25 +16,30 @@ const data = {
     body: JSON.stringify(data), // body data type must match "Content-Type" header */
 };
 
-function renderMealsList(resData) {
+/**
+ * Display meals list to UI
+ * @param {fetched Meals Data list} resData
+ */
+function renderMealsList(resData, isError) {
   //console.log(mealsData);
-  const mealsUL = document.getElementById("meals-list");
-  let mealsData = [];
-  mealsData = resData?.meals;
-  mealsUL.innerHTML = "";
-  let mealsLIStr = "";
-  mealsData.forEach((meal) => {
-    mealsLIStr =
-      mealsLIStr +
-      `          
+  if (!isError) {
+    const mealsUL = document.getElementById("meals-list");
+    let mealsData = [];
+    mealsData = resData?.meals;
+    mealsUL.innerHTML = "";
+    let mealsLIStr = "";
+    mealsData.forEach((meal) => {
+      mealsLIStr =
+        mealsLIStr +
+        `          
             <li class="meal">
                     <div class="meal-img">
                         <img src=${meal["strMealThumb"]} alt="meal img" />
                     </div>
                     <div class="meal-list-detail">
-                        <h3>${meal["strMeal"]}</h3>
+                        <h2>${meal["strMeal"]}</h2>
                         <p>${meal["strInstructions"]}</p>
-                        <h2>Ingredient</h2>
+                        <h3>Ingredient</h3>
                         <ul class="meal-list-ing">
                             <li>${meal["strIngredient1"]}</li>
                             <li>${meal["strIngredient2"]}</li>
@@ -47,15 +54,21 @@ function renderMealsList(resData) {
                     >
                     </div>
         </li>`;
-  });
+    });
 
-  mealsUL.innerHTML = mealsLIStr;
+    mealsUL.innerHTML = mealsLIStr;
+  } else {
+    console.log(`Error in fetching meals data:: ${resData}`);
+  }
 }
 
+//fetch Meals data
 function fetchMealsData() {
   try {
     fetchData(URL, data, renderMealsList);
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export { fetchMealsData };

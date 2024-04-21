@@ -8,9 +8,9 @@ async function fetchData(url, data, cb) {
   try {
     let res = await fetch(url, data);
     let resData = await res.json();
-    cb(resData, false);
+    cb(resData, false); //no error
   } catch (err) {
-    cb(err, true);
+    cb(err, true); //with error
   }
 }
 
