@@ -31,23 +31,30 @@ function renderMealsList(mealsArr) {
       mealsLIStr +
       `          
           <li class="meal">
+            <div class="meal-cont">
                   <div class="meal-img">
                       <img src=${meal["strMealThumb"]} alt="meal img" />
                   </div>
                   <div class="meal-list-detail">
                       <h2>${meal["strMeal"]}</h2>
-                      <p>${meal["strInstructions"]}</p>
-                      <h3>Ingredient</h3>
                       <ul class="meal-list-ing">
-                          <li>${meal["strIngredient1"]}</li>
-                          <li>${meal["strIngredient2"]}</li>
-                          <li>${meal["strIngredient3"]}</li>
-                          <li>${meal["strIngredient4"]}</li>
-                          <li>${meal["strIngredient5"]}</li>
+                          <li>${meal["strCategory"]}</li>
+                          <li>${meal["strArea"]}</li>
+                          <li>${meal["strTags"]}</li>
+                         ${
+                           meal["strYoutube"] &&
+                           `<li><a href=${meal["strYoutube"]} alt="yt link" target="_blank" class="ytlink">${meal["strYoutube"]}</a></li>`
+                         }
+                          
                       </ul>
                   </div>
-                  <div class="meal-list-detail">
-                  <a href="./pages/meal-details.html" class="meal-list-detail-btn"
+              </div>
+                  <div class="meal-list-detail md-btn-cont">
+                  <a id=${
+                    meal["idMeal"]
+                  } href="./pages/meal-details.html" class="meal-list-detail-btn" data-mealid=${
+        meal["idMeal"]
+      }
                       >Details</a
                   >
                   </div>
