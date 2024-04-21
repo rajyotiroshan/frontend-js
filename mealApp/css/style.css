@@ -2,16 +2,37 @@
     box-sizing: content-box;
     font-size: 10px;
 }
-ul, i, div, p, h1,h2,h3,h4,h5,h6{
+header, nav,ul, li,i, div, p,section,a,span{
     font-size: inherit;
     
     }
-    
+
+    form,input,button,textarea {
+        font-size: inherit;
+    }
+    h1{
+        font-size: 3.6rem;
+    }
+    h2{
+        font-size: 2.8rem;
+    }
+    h3{
+        font-size: 2.4rem;
+    }
+    h4{
+        font-size: 1.8rem;
+    }
+
+  header {
+    font-size: 1.8rem;
+  }    
     
     main {
+        font-size: 1.6rem;
         max-width: 80%;
         margin: 0 auto;
     }
+
     
     ul#meals-list {
         list-style-type: none;
@@ -22,6 +43,9 @@ ul, i, div, p, h1,h2,h3,h4,h5,h6{
     li.meal {
         display: flex;
         flex-direction: row;
+        box-shadow: 0 0 5px 0px #FFC107;
+        margin-bottom: 1rem;
+        border: none;
     }
     
     .meal-img {
@@ -30,4 +54,14 @@ ul, i, div, p, h1,h2,h3,h4,h5,h6{
     
     img {
         width: 100%;
+    }
+
+    footer {
+    font-size: 1.6rem;
+    max-width: 80%;
+    margin: 3rem auto;
+    }
+
+    p#footer-cr {
+        text-align: right;
     }
