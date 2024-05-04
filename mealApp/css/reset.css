@@ -37,3 +37,11 @@ header, nav,ul, li,ol,i, div, p,section,a,span{
     max-width: 60%;
     margin: 0 auto;
 }
+
+.meal-img {
+    width: 50%;
+}
+
+img {
+    width: 100%;
+}

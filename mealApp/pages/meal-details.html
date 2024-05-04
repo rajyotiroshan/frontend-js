@@ -4,21 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meals Details</title>
+    <link rel="stylesheet" href="../css/meal-details.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header.css" />
   </head>
   <body>
-    <header>
-        <a href="../index.html>
-          <span class="meaal icon"></span>
-          <span>The Meal App</span>
-        </a>
-  
-        <nav>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./favourite-meal.html">My Favourite List</a></li>
-          </ul>
-        </nav>
-      </header>
-    <h1>Meals Details</h1>
+    <header id="pg-hdr">
+      <a href="../index.html">
+        <span>The Meal App</span>
+      </a>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="./favourite-meal.html">My Favourite List</a>
+      </nav>
+    </header>
+    <main>
+      <h1 id="meal-det-hdr"></h1>
+      <div class="meal-img"></div>
+      <section id="meals-details">
+        <div id="meal-ins-conat">
+          <h3>Instructions</h3>
+          <p id="meal-instruction"></p>
+        </div>
+        <div id="ing_msr-cont">
+          <div id="ing-container">
+            <h3 class="det-hdr">Ingredients</h3>
+            <ol id="meals-ing"></ol>
+          </div>
+
+          <div id="ing-container">
+            <h3 class="det-hdr">Measures</h3>
+            <ol id="meals-measure"></ol>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      <p id="footer-cr">Made with Love by @Rajan Kumar Jha</p>
+    </footer>
+    <script type="module" src="./js/index.js"></script>
+    <script src="../state/state.js" type="module"></script>
+    <script src="../state/stateFunctions.js"></script>
+    <script src="../js/module/mealDetails.js" type="module"></script>
   </body>
 </html>
