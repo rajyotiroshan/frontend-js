@@ -6,6 +6,7 @@ let mealsState = {
   },
   fetchedMeals: [],
   favList: [],
+  //clickedMealID: "",
 };
 
 export { mealsState as default };

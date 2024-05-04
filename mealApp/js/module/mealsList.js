@@ -1,4 +1,3 @@
-import { updateClickedMeal } from "../../state/stateFunctions.js";
 /**
  * Display meals list to UI
  * @param {fetched Meals Data list} resData
@@ -18,6 +17,7 @@ function renderMealsList(mealsArr) {
                       <img src=${meal["strMealThumb"]} alt="meal img" />
                   </div>
                   <div class="meal-list-detail">
+                  <div>
                       <h2>${meal["strMeal"]}</h2>
                       <ul class="meal-list-ing">
                           <li>${meal["strCategory"]}</li>
@@ -29,31 +29,25 @@ function renderMealsList(mealsArr) {
                          }
                           
                       </ul>
-                  </div>
-              </div>
-                  <div class="meal-list-detail md-btn-cont">
-                  <a id=${meal["idMeal"]} href="./pages/meal-details.html?mealid=${
+                      </div>
+                      <div class="meal-list-detail md-btn-cont">
+                  <a id=${
+                    meal["idMeal"]
+                  } href="./pages/meal-details.html?mealid=${
         meal["idMeal"]
       }" class="meal-list-detail-btn"
       }
                       >Details</a
                   >
                   </div>
+                  </div>
+                  
+              </div>
+                  
       </li>`;
   });
 
   mealsUL.innerHTML = mealsLIStr;
-
-  document.querySelectorAll(".meal-list-detail-btn").forEach((el) =>
-    el.addEventListener("click", function (evt) {
-      evt.stopPropagation();
-      //evt.preventDefault();
-      //
-      const clickedMealID = evt.target.getAttribute("data-mealid").trim();
-      console.log(evt.target.getAttribute("data-mealid"));
-      updateClickedMeal(clickedMealID);
-    })
-  );
 }
 
 export { renderMealsList };

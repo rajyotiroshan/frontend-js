@@ -5,6 +5,7 @@ import mealsState from "./state.js";
  * @param {fetched meals list} meals
  */
 function updateMealsList(meals) {
+  debugger;
   mealsState.fetchedMeals = meals;
   let mealObj = {
     ingredients: {},
@@ -46,6 +47,11 @@ function updateMealsList(meals) {
   mealsState.meals.measures = mealObj.measures;
 
   console.log(mealsState);
+  // Convert the state object to a JSON string
+  const stateJSON = JSON.stringify(mealsState);
+
+  // Store the JSON string in localStorage
+  localStorage.setItem("state", stateJSON);
 
   renderMealsList(meals);
 }
@@ -66,4 +72,9 @@ function removeMealFromFav(mealID) {
   mealsState.favList = mealsState.favList.forEach((id) => id != mealID);
 }
 
-export { mealsState, updateMealsList, addMealToFav, removeMealFromFav };
+export {
+  mealsState,
+  updateMealsList,
+  addMealToFav,
+  removeMealFromFav,
+};
