@@ -1,0 +1,39 @@
+* {
+    box-sizing: content-box;
+    font-size: 10px;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+header, nav,ul, li,ol,i, div, p,section,a,span{
+    font-size: inherit;
+    }
+
+    form,input,button,textarea {
+        font-size: inherit;
+    }
+    h1{
+        font-size: 3.6rem;
+    }
+    h2{
+        font-size: 2.8rem;
+    }
+    h3{
+        font-size: 2.4rem;
+    }
+    h4{
+        font-size: 1.8rem;
+    }
+
+  header {
+    font-size: 1.8rem;
+  }  
+
+  main {
+    font-size: 1.6rem;
+    max-width: 60%;
+    margin: 0 auto;
+}

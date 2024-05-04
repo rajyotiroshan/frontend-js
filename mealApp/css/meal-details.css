@@ -1,0 +1,15 @@
+section#meals-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div#ing_msr-cont {
+    display: flex;
+    justify-content: space-between;
+    min-width: 40%;
+}
+
+div#meal-ins-conat {
+    max-width: 40%;
+}

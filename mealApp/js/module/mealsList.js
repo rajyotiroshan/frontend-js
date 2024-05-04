@@ -1,22 +1,4 @@
-import fetchData from "../../api/api.js";
-import { updateMealsList } from "../../state/stateFunctions.js";
-
-//meals to fetch on main page first time
-const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=veg`;
-const data = {
-  method: "GET", // *GET, POST, PUT, DELETE, etc.
-  /*     mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: "follow", // manual, *follow, error
-    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(data), // body data type must match "Content-Type" header */
-};
-
+import { updateClickedMeal } from "../../state/stateFunctions.js";
 /**
  * Display meals list to UI
  * @param {fetched Meals Data list} resData
@@ -50,10 +32,9 @@ function renderMealsList(mealsArr) {
                   </div>
               </div>
                   <div class="meal-list-detail md-btn-cont">
-                  <a id=${
-                    meal["idMeal"]
-                  } href="./pages/meal-details.html" class="meal-list-detail-btn" data-mealid=${
+                  <a id=${meal["idMeal"]} href="./pages/meal-details.html?mealid=${
         meal["idMeal"]
+      }" class="meal-list-detail-btn"
       }
                       >Details</a
                   >
@@ -62,31 +43,17 @@ function renderMealsList(mealsArr) {
   });
 
   mealsUL.innerHTML = mealsLIStr;
+
+  document.querySelectorAll(".meal-list-detail-btn").forEach((el) =>
+    el.addEventListener("click", function (evt) {
+      evt.stopPropagation();
+      //evt.preventDefault();
+      //
+      const clickedMealID = evt.target.getAttribute("data-mealid").trim();
+      console.log(evt.target.getAttribute("data-mealid"));
+      updateClickedMeal(clickedMealID);
+    })
+  );
 }
 
-/**
- *
- * @param {fetched Meals Data} resData
- * @param {if an error during fetching or not} isError
- */
-function cbForMealsFetched(resData, isError) {
-  if (!isError) {
-    let mealsData = [];
-    mealsData = resData?.meals;
-    //update meals state
-    updateMealsList(mealsData);
-  } else {
-    console.log(`Error in fetching meals data:: ${resData}`);
-  }
-}
-
-//fetch Meals data
-function fetchMealsData() {
-  try {
-    fetchData(URL, data, cbForMealsFetched);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-export { fetchMealsData, renderMealsList };
+export { renderMealsList };

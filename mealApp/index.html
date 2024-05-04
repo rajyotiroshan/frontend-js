@@ -4,41 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <title>Meals App</title>
   </head>
   <body>
-    <header>
+    <header id="pg-hdr">
       <a href="./index.html">
         <span class="meaal icon"></span>
-        <span>Your Meal App</span>
+        <span>The Meal App</span>
       </a>
 
       <nav>
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./pages/favourite-meal.html">My Favourite List</a></li>
-        </ul>
+        <a href="./index.html">Home</a>
+        <a href="./pages/favourite-meal.html">My Favourite List</a>
       </nav>
     </header>
 
     <main>
-      <form action="#">
-        <div class="form-field">
-          <input
-            type="text"
-            placeholder="Search your favourite meals.."
-            name="meals"
-            id="srch-field"
-          />
-          <button id="srchbtn">Search</button>
-        </div>
-      </form>
-      <ul id="matched-meals-list">
-        <li>Chicken kadhi</li>
-        <li>Malai kofta with sd</li>
-        <li>puri sabij mixd</li>
-        <li>veg mixed wih oanne biryani</li>
-      </ul>
+      <section id="search-container">
+        <form action="#">
+          <div class="form-field">
+            <input
+              type="text"
+              placeholder="Search your favourite meals.."
+              name="meals"
+              id="srch-field"
+            />
+            <button id="srchbtn">Search</button>
+          </div>
+        </form>
+        <!--         <ul id="matched-meals-list">
+          <li>Chicken kadhi</li>
+          <li>Malai kofta with sd</li>
+          <li>puri sabij mixd</li>
+          <li>veg mixed wih oanne biryani</li>
+        </ul> -->
+      </section>
 
       <section id="meals">
         <ul id="meals-list">
@@ -57,7 +59,7 @@
                 <li>sas</li>
               </ul>
             </div>
-            <div class="meal-list-detail">
+            <div class="meal-list-detail" id="md-btn-cont">
               <a href="./pages/meal-details.html" class="meal-list-detail-btn"
                 >Details</a
               >
