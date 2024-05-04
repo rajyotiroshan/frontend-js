@@ -57,12 +57,30 @@
 
     .meal-list-detail {
         margin-left: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: flex-end;
+        align-items: baseline;
     }
 
     .meal-list-detail.md-btn-cont {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 1rem;
+        border: 1px solid blueviolet;
+        background-color: #FFC107;
+    }
+
+    .meal-list-detail.md-btn-cont:hover {
+
+        background-color: green;
+    }
+
+    .meal-list-detail.md-btn-cont:hover>a {
+
+        color: yellow;
     }
     
     .meal-img {
