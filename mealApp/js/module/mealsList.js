@@ -39,7 +39,9 @@ function renderMealsList(mealsArr) {
       }
                       >Details</a
                   >
+                  
                   </div>
+                  <span class="fa-solid fa-heart fa-2xl fav"></span>
                   </div>
                   
               </div>

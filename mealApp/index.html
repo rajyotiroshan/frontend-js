@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/favourite.css" />
+    <script
+      src="https://kit.fontawesome.com/2a72c5c19d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Meals App</title>
   </head>
   <body>
@@ -43,27 +48,42 @@
 
       <section id="meals">
         <ul id="meals-list">
-          <li class="meal">
-            <div class="meal-img">
-              <img src="#" alt="meal img" />
-            </div>
-            <div class="meal-list-detail">
-              <h3>Chicken Kadhi Biryani</h3>
-              <p>details</p>
-              <ul class="meal-list-ing">
-                <li>chicken</li>
-                <li>pyaj</li>
-                <li>lahsan</li>
-                <li>sasa</li>
-                <li>sas</li>
-              </ul>
-            </div>
-            <div class="meal-list-detail" id="md-btn-cont">
-              <a href="./pages/meal-details.html" class="meal-list-detail-btn"
-                >Details</a
-              >
-            </div>
-          </li>
+          <!--    <li class="meal">
+            <div class="meal-cont">
+                  <div class="meal-img">
+                      <img src=${meal["strMealThumb"]} alt="meal img" />
+                  </div>
+                  <div class="meal-list-detail">
+                  <div>
+                      <h2>${meal["strMeal"]}</h2>
+                      <ul class="meal-list-ing">
+                          <li>${meal["strCategory"]}</li>
+                          <li>${meal["strArea"]}</li>
+                          <li>${meal["strTags"]}</li>
+                      <!--    ${
+                           meal["strYoutube"] &&
+                           `<li><a href=${meal["strYoutube"]} alt="yt link" target="_blank" class="ytlink">${meal["strYoutube"]}</a></li>`
+                         } 
+                          
+                      </ul>
+                      </div>
+                      <div class="meal-list-detail md-btn-cont">
+                  <a id=${
+                    meal["idMeal"]
+                  } href="./pages/meal-details.html?mealid=${
+        meal["idMeal"]
+      }" class="meal-list-detail-btn"
+      }
+                      >Details</a
+                  >
+
+                 
+                  </div>
+                  </div>
+                  
+              </div>
+                  
+      </li> -->
         </ul>
       </section>
     </main>

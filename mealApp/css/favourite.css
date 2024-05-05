@@ -1,0 +1,10 @@
+.fav {
+    font-size: 6rem !important;
+    color: #dbd8d8;
+    cursor: pointer;
+    margin: 5rem 0;
+}
+
+.fav.selected {
+    color: rgb(241, 31, 31);
+}
