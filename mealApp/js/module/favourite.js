@@ -25,7 +25,6 @@ function addClickEvtToFavBtn() {
         if (favListID) {
           favListID = JSON.parse(favListID);
           favListID = favListID.filter((id) => id != mealID);
-          favListID.push(mealID);
           localStorage.setItem("favListID", JSON.stringify(favListID));
         }
         evt.target.classList.remove("selected");

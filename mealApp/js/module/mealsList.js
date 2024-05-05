@@ -8,7 +8,16 @@ function renderMealsList(mealsArr) {
   const mealsUL = document.getElementById("meals-list");
   mealsUL.innerHTML = "";
   let mealsLIStr = "";
+  let favMealsIDList = JSON.parse(localStorage.getItem("favListID"));
+  if (!favMealsIDList) {
+    favMealsIDList = [];
+  }
   mealsArr.forEach((meal) => {
+    const mealID = meal["idMeal"];
+    let selected = "selected";
+    if (!favMealsIDList.includes(mealID)) {
+      selected = "";
+    }
     mealsLIStr =
       mealsLIStr +
       `          
@@ -34,17 +43,13 @@ function renderMealsList(mealsArr) {
                       <div class="meal-list-detail md-btn-cont">
                   <a id=${
                     meal["idMeal"]
-                  } href="./pages/meal-details.html?mealid=${
-        meal["idMeal"]
-      }" class="meal-list-detail-btn"
+                  } href="./pages/meal-details.html?mealid=${mealID}" class="meal-list-detail-btn"
       }
                       >Details</a
                   >
                   
                   </div>
-                  <span class="fa-solid fa-heart fa-2xl fav" data-mealid="${
-                    meal["idMeal"]
-                  }"></span>
+                  <span class="fa-solid fa-heart fa-2xl fav ${selected}" data-mealid="${mealID}"></span>
                   </div>
                   
               </div>
