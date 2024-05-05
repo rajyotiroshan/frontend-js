@@ -2,6 +2,7 @@
  * Display meals list to UI
  * @param {fetched Meals Data list} resData
  */
+import { addClickEvtToFavBtn } from "./favourite.js";
 function renderMealsList(mealsArr) {
   console.log(mealsArr);
   const mealsUL = document.getElementById("meals-list");
@@ -41,7 +42,9 @@ function renderMealsList(mealsArr) {
                   >
                   
                   </div>
-                  <span class="fa-solid fa-heart fa-2xl fav"></span>
+                  <span class="fa-solid fa-heart fa-2xl fav" data-mealid="${
+                    meal["idMeal"]
+                  }"></span>
                   </div>
                   
               </div>
@@ -50,6 +53,8 @@ function renderMealsList(mealsArr) {
   });
 
   mealsUL.innerHTML = mealsLIStr;
+
+  addClickEvtToFavBtn();
 }
 
 export { renderMealsList };

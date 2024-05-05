@@ -1,5 +1,6 @@
 import { fetchMealsData } from "./module/mealsUtility.js";
 import { searchMeals } from "./module/searchMeals.js";
+import { addClickEvtToFavBtn } from "./module/favourite.js";
 //meals to fetch on main page first time
 const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=veg`;
 const data = {
