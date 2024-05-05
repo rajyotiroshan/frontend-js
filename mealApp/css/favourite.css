@@ -8,3 +8,16 @@
 .fav.selected {
     color: rgb(241, 31, 31);
 }
+
+button#fav-btn {
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    COLOR: violet;
+}
+
+button#fav-btn:hover {
+    text-shadow: 1px 0px 1px #503838;
+}
