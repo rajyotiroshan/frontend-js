@@ -53,7 +53,7 @@ function updateMealsList(meals) {
   // Store the JSON string in localStorage
   localStorage.setItem("state", stateJSON);
 
-  renderMealsList(meals);
+  renderMealsList(meals, 0);
 }
 
 /**
@@ -72,9 +72,4 @@ function removeMealFromFav(mealID) {
   mealsState.favList = mealsState.favList.forEach((id) => id != mealID);
 }
 
-export {
-  mealsState,
-  updateMealsList,
-  addMealToFav,
-  removeMealFromFav,
-};
+export { mealsState, updateMealsList, addMealToFav, removeMealFromFav };

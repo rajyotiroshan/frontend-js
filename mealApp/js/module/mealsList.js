@@ -3,7 +3,8 @@
  * @param {fetched Meals Data list} resData
  */
 import { addClickEvtToFavBtn } from "./favourite.js";
-function renderMealsList(mealsArr) {
+function renderMealsList(mealsArr, isFavList) {
+  debugger;
   console.log(mealsArr);
   const mealsUL = document.getElementById("meals-list");
   mealsUL.innerHTML = "";
@@ -43,7 +44,7 @@ function renderMealsList(mealsArr) {
                       <div class="meal-list-detail md-btn-cont">
                   <a id=${
                     meal["idMeal"]
-                  } href="./pages/meal-details.html?mealid=${mealID}" class="meal-list-detail-btn"
+                  } href="./pages/meal-details.html?mealid=${mealID}&isFav=${isFavList}" class="meal-list-detail-btn"
       }
                       >Details</a
                   >
